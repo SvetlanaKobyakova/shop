@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from .models import Products
 
 def catalog(request):
-    pass
+    goods = Products.objects.all()
+    context = {
+        'goods': goods
+    }
+    return render(request, "goods/catalog.html", context)
 
 def product(request):
-    pass
+
+    return render(request, )
